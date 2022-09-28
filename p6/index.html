@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Reem+Kufi+Ink&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="init();">
+    <div id="container">
+        <h1>Photo Gallery</h1>
+        <p>Photos kindly provided by <a href="https://picsum.photos" target="_blank">Lorem Picsum</a>.</p>
+        <div>
+            <label for="quantity">Choose quantity</label><select name="quantity" id="quantity">
+                <option value="7">Small</option>
+                <option value="14">Medium</option>
+                <option value="21">Big</option>
+            </select>
+            <label for="size">Choose size</label><select name="size" id="size">
+                <option value="500">500</option>
+                <option value="550">550</option>
+                <option value="600">600</option>
+            </select>
+            <input type="button" value="Change" onclick="change()" />
+        </div>
+        <div id="loading" class="nodisp">Loading...</div>
+        <div id="gallery" class="nodisp"></div>
+    </div>
+    <div id="photo-carrousel" class="nodisp carrousel">
+        <div class="photo_container">
+            <img id="photo" src="#" title="" alt=""
+                onclick="document.getElementById('photo-carrousel').classList.add('nodisp');">
+        </div>
+        <div class="leftBottom" onclick="prevPhoto()"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="rightBottom" onclick="nextPhoto()"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="closeBottom" onclick="closePhoto()"><i class="fa-solid fa-xmark"></i></div>
+        <div class="author" id="author"></div>
+    </div>
+    <script src="jslib.js"></script>
+    <script src="api.js"></script>
+    <script src="gallery.js"></script>
+</body>
+
+</html>
